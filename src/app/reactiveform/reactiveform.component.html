@@ -1,0 +1,131 @@
+<html>
+    <head>
+        <style>
+            input{
+                width: 500px;
+            }
+            form{
+                color: skyblue;
+                background-color: linen;
+                width: 500px;;
+            }
+            
+        </style>
+    </head>
+    
+<h2>Reactive Form</h2>
+<br>
+<div class="container" >     
+<form [formGroup]="myForm" (ngSubmit)="onSubmitReactiveForm()" >
+    <div class="form-group">
+        <label>First Name: </label>
+        <input type="text" name="fname" formControlName="fname" class="form-control" 
+        required placeholder="First Name is required" 
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            First Name is Required
+        </div> 
+    </div>
+
+    <div class="form-group">
+        <label>Last Name: </label>
+        <input type="text" name="lname" formControlName="lname" class="form-control"
+        required placeholder="Last Name is required"
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            Last Name is Required
+        </div> 
+    </div>
+
+    <div class="form-group">
+        <label>Email: </label>
+        <input type="email" name="email" formControlName="email" class="form-control"
+        required placeholder="Please Enter Your Email" [ngClass]="{'is-invalid': isFormSubmitted && f.email.errors}" >
+        <div *ngIf="isFormSubmitted && f.email.errors?.required" class="invalid-feedback">
+            Email is Required
+        </div>
+        <div *ngIf="isFormSubmitted && f.email.errors?.pattern" class="invalid-feedback">
+            Please Enter Valid Email
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label>Password: </label>
+        <input type="password" name="pass" formControlName="pass" class="form-control" 
+        required placeholder=" Please Enter Your Password" 
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            password is Required
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Confirm Password: </label>
+        <input type="password" name="cpass" formControlName="cpass" class="form-control"
+        required placeholder=" Please Confirm Your Password" 
+        [ngClass]="{'is-invalid': isFormSubmitted && f.fname.errors}">
+        <div *ngIf="isFormSubmitted && f.fname.errors?.required" class="invalid-feedback">
+            password is Required
+        </div>
+        
+    </div><br>
+
+    <button class="btn btn-info">Submit</button>
+    
+    
+</form>
+</div>
+<br>
+<div class="container">
+<div>
+    <style>
+        table {
+          border-collapse: collapse;
+          background-color: skyblue;
+        }
+        th {
+          border: 1px solid #ccc;
+        }
+        td {
+          border: 1px solid #ccc;
+        }
+        
+        th, td {
+          padding: 30px;
+          text-align: left;
+        }
+        tr:nth-child(even) {
+          background-color: #eee;
+        }
+        tr:nth-child(odd) {
+          background-color: #fff;
+        }            
+      </style>
+      
+      <table>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email Address</th>
+          <th>Password</th>
+          <th>Confirm Password</th>
+          <th>CURD OP</th>
+        </tr>
+        <tr *ngFor="let d of reg">
+            <td>{{d.fname}}</td>
+            <td>{{d.lname}}</td>
+            <td>{{d.email}}</td>
+            <td>{{d.pass}}</td>
+            <td>{{d.cpass}}</td>
+            <td><button class="btn btn-del" (click)="onDelete(d)">Delete</button></td>
+            <td><button class="btn btn-del" (click)="onDelete(d)">Edit</button></td>
+        </tr>
+        
+       
+      </table>
+</div>
+</div>
+</html>
+
+

@@ -1,0 +1,28 @@
+<!-- <p>service-data works!</p> -->
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        padding: 10px;
+    }
+    th{
+        color: blueviolet;
+        text-align: center;
+    }
+</style>
+<table>
+    <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>User Name </th>
+    <th>Email</th>
+    </tr>
+    <tr *ngFor="let a of userdata">
+        <td>{{a.id}}</td>
+        <td>{{a.name}}</td>
+        <td>{{a.username}}</td>
+        <td>{{a.email}}</td>
+    </tr>
+</table>
+

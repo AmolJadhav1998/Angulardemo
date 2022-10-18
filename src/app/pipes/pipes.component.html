@@ -1,0 +1,31 @@
+<h3>Original Text : {{stext}}</h3>
+<h3>uppercase Text : {{stext | uppercase}}</h3>
+<h3> lowercase Text :{{stext | lowercase}} </h3>
+<h3>Title Text :{{stext | titlecase}}</h3>
+<br>
+
+<h2 style="color: purple;">Dates in Pipes</h2>
+<h4>Original Date : {{date1}}</h4>
+<h4>Standard Form : {{date1 | date}}</h4>
+<h4>Short Date : {{date1 | date:'short'}}</h4>
+<h4>Medium Date : {{date1 | date:'medium'}}</h4>
+<h4>Long Date : {{date1 | date:'long'}}</h4>
+<h4>DD/MM/YY date : {{date1 | date:'dd/MM/yy'}}</h4>
+<br>
+<h2 style="color: purple;"> JSON Pipe --</h2>
+<h5>JSON Pipe : {{data | json}}</h5>
+<br>
+<h2 style="color: purple;"> Slice Pipe --</h2>
+<h4>Slice Text : {{stext | slice:2}}</h4>
+<h4>Slice Text : {{stext | slice:0:7}}</h4>
+<h2>Currency --</h2>
+<h3>Original Text : {{salary}}</h3>
+<h3>Original Text : {{salary | currency}}</h3>
+<h3>Original Text : {{salary | currency:'INR'}}</h3>
+ <br>
+<h2 style="color:purple ;">Multiple Pipes :</h2>
+<p>Multiple Pipes : {{stext | slice:0:6 | uppercase}}</p>
+<br>
+<h1>Custom Pipe</h1>
+<h3>Original Text : {{salary | cust:73}}</h3>
+<h3>Original Text : {{stext | cust}}</h3>

@@ -1,0 +1,18 @@
+<p> Angular Directives</p>
+<h2>(I) Structural Directives</h2>
+<div>
+     <!-- 1.*ngif -->
+    <p *ngIf="age>18 || Showdata">Your Age is Greater than 18</p>
+</div>
+<!-- 2. *ngfor -->
+<select>
+    <option *ngFor="let aa of student">{{aa}}</option>
+</select>
+<!-- 3.ngswitch -->
+<div [ngSwitch]="edu">
+    <div *ngSwitchCase="1">10</div>
+    <div *ngSwitchCase="2">12</div>
+    <div *ngSwitchCase="3">Graduation</div>
+    <div *ngSwitchCase="4">PG</div>
+    <div *ngSwitchDefault>This is Default Case</div>
+</div>

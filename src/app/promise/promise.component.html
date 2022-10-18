@@ -1,0 +1,27 @@
+<p>promise works!</p>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+    th, td {
+        padding: 10px;
+    }
+    th{
+        color: blueviolet;
+        text-align: center;
+    }
+</style>
+<table>
+    <tr>
+        <th>userId </th>
+        <th>id</th>
+        <th>title</th>
+    </tr>
+
+    <tr *ngFor="let a of userdata_arr">
+        <td>{{a.userId}}</td>
+        <td>{{a.id}}</td>
+        <td>{{a.title}}</td>
+    </tr>
+</table>
