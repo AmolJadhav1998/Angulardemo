@@ -17,6 +17,7 @@ import { RxjsopComponent } from './rxjsop/rxjsop.component';
 import { PromiseComponent } from './promise/promise.component';
 import { LivecodingComponent } from './livecoding/livecoding.component';
 import { Test1Component } from './test1/test1.component';
+import { Binding01Component } from './binding01/binding01.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { Test1Component } from './test1/test1.component';
     RxjsopComponent,
     PromiseComponent,
     LivecodingComponent,
-    Test1Component
+    Test1Component,
+    Binding01Component
   ],
   imports: [
     BrowserModule,
